@@ -1,0 +1,14 @@
+sabnzbd:
+  image: linuxserver/sabnzbd
+  restart: always
+  ports:
+    - 8080:8080
+    - 9090:9090
+  environment:
+    PGID: 0
+    PUID: 0
+    TZ: EUROPE/BERLIN
+  volumes:
+    - /mnt/storage/sabnzbd:/config
+	  - /mnt/storage/downloads:/downloads
+	  - /mnt/storage/incomplete-downloads:/incomplete-downloads

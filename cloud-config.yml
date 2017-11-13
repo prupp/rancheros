@@ -1,0 +1,20 @@
+hostname: rancher
+rancher:
+  console: default
+  docker:
+    graph: /mnt/storage/docker
+    storage_driver: zfs
+  environment:
+    EXTRA_CMDLINE: /init
+  services_include:
+    /var/lib/rancher/conf/couchpotato.yml: true
+    /var/lib/rancher/conf/plex.yml: true
+    /var/lib/rancher/conf/sabnzbd.yml: true
+    kernel-headers-system-docker: true
+    zfs: true
+  state:
+    dev: LABEL=RANCHER_STATE
+    wait: true
+ssh_authorized_keys:
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIdYANNaPgNhyxqUoXpl6xJ23i0j8cg0MTEdJpALAE2Pthr1D2XH4CryXJPp1rLoP2E67ZenjiYtWs96/RYVn03wxOQD4cn7N4fWpvKrxZFWm6YkZnfTQ3ISErtTNzwUULHckMcfwMSW9/5tGOLkQiNCpD0ENqrPUsjDazUyDe6lyfWWcyD576V6hfiAvD6xHRBiOfsrhK/iX3AVHknLvrSnnyQoAyscU7JsPH3bfBWftlsAK/BBJxSN6FaoTn2+XeGXtu8jRCA31E29OX8k1xG5QZof2yFfViv0xUPc3iTMB/8/19k4Sxu0LgR3YqOdZrEbgRSnpLg1b/dYCmKfwd
+  philipprupp@Philipps-MBP.fritz.box

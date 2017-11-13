@@ -1,0 +1,13 @@
+couchpotato:
+  image: linuxserver/couchpotato
+  restart: always
+  ports:
+    - 5050:5050
+  environment:
+    PGID: 0
+    PUID: 0
+    TZ: EUROPE/BERLIN
+  volumes:
+    - /mnt/storage/couchpotato:/config
+	  - /mnt/storage/downloads:/downloads
+	  - /mnt/storage/movies:/movies
