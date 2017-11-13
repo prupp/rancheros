@@ -9,6 +9,7 @@ rancher:
   services_include:
     /var/lib/rancher/conf/couchpotato.yml: true
     /var/lib/rancher/conf/plex.yml: true
+    /var/lib/rancher/conf/portainer.yml: true
     /var/lib/rancher/conf/sabnzbd.yml: true
     kernel-headers-system-docker: true
     zfs: true
