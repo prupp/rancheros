@@ -1,0 +1,13 @@
+sonarr:
+  image: linuxserver/sonarr
+  restart: always
+  ports:
+    - 8989:8989
+  environment:
+    PGID: 0
+    PUID: 0
+    TZ: EUROPE/BERLIN
+  volumes:
+    - /mnt/storage/sonarr:/config
+    - /mnt/storage/series:/series
+    - /mnt/storage/downloads:/downloads
