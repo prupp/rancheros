@@ -11,6 +11,7 @@ rancher:
     /var/lib/rancher/conf/plex.yml: true
     /var/lib/rancher/conf/portainer.yml: true
     /var/lib/rancher/conf/sabnzbd.yml: true
+    /var/lib/rancher/conf/sonarr.yml: true
     kernel-headers-system-docker: true
     zfs: true
   state:
