@@ -1,0 +1,12 @@
+samba:
+  image: dperson/samba
+  restart: always
+  ports:
+    - 139:139
+    - 445:445
+  environment:
+    GROUPID: 0
+    USERID: 0
+    TZ: EUROPE/BERLIN
+  volumes:
+    - /mnt/storage:/mount

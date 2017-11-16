@@ -8,10 +8,13 @@ rancher:
     EXTRA_CMDLINE: /init
   services_include:
     /var/lib/rancher/conf/couchpotato.yml: true
+    /var/lib/rancher/conf/samba.yml: true
     /var/lib/rancher/conf/plex.yml: true
     /var/lib/rancher/conf/portainer.yml: true
     /var/lib/rancher/conf/sabnzbd.yml: true
     /var/lib/rancher/conf/sonarr.yml: true
+    /var/lib/rancher/conf/timemachine.yml: true
+    /var/lib/rancher/conf/wordpress.yml: true
     kernel-headers-system-docker: true
     zfs: true
   state:

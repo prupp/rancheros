@@ -1,0 +1,12 @@
+timemachine:
+  image: odarriba/timemachine
+  restart: always
+  ports:
+    - 548:548
+    - 636:636
+  environment:
+    AFP_LOGIN: prupp
+    AFP_PASSWORD: '***'
+    AFP_NAME: rancher-machine
+  volumes:
+    - /mnt/storage/timemachine:/timemachine
