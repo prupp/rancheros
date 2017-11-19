@@ -1,11 +1,11 @@
 plex:
   image: linuxserver/plex
-  restart: unless-stopped
+  restart: always
   environment:
     - TZ=EUROPE/BERLIN
     - PLEX_GID=0
     - PLEX_UID=0
-  network_mode: host
+  net: host
   hostname: plex
   volumes:
     - /mnt/storage/plex:/config
