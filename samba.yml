@@ -1,12 +1,18 @@
 samba:
   image: dperson/samba
   restart: always
+  net: host
   ports:
     - 139:139
     - 445:445
+    - 137:137
+    - 138:138
   environment:
     GROUPID: 0
     USERID: 0
     TZ: EUROPE/BERLIN
+    NMBD: true
   volumes:
     - /mnt/storage:/mount
+    - /mnt/storage/samba:/etc/samba
+  command: -s "rancher;/mount"
