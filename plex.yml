@@ -2,13 +2,13 @@ plex:
   image: linuxserver/plex
   restart: always
   environment:
-    - TZ=EUROPE/BERLIN
-    - PLEX_GID=0
-    - PLEX_UID=0
+    TZ: EUROPE/BERLIN
+    PGID: 0
+    PUID: 0
+    VERSION: latest
   net: host
   hostname: plex
   volumes:
     - /mnt/storage/plex:/config
-    - /mnt/storage/transcode:/transcode
     - /mnt/storage/movies:/movies
     - /mnt/storage/series:/series
