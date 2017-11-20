@@ -1,5 +1,19 @@
+https-portal:
+  image: steveltn/https-portal
+  restart: always
+  ports:
+    - 80:80
+    - 443:443
+  depends_on:
+    - wordpress
+  links:
+    - wordpress
+  environment:
+    - "DOMAINS=goodmorningasia.duckdns.org -> http://wordpress"
+    - "PRODUCTION=true"
+
 db:
-  image: mysql:5.7
+  image: mariadb
   volumes:
     - /mnt/storage/mysql:/var/lib/mysql
   restart: always
@@ -17,14 +31,10 @@ wordpress:
   links:
     - "db:db"
   restart: always        
-  image: wordpress:latest
-  ports:       
-    - 443:443    
-    - 80:80            
+  image: wordpress:latest         
   environment:                
     WORDPRESS_DB_HOST: db:3306             
     WORDPRESS_DB_USER: prupp               
     WORDPRESS_DB_PASSWORD: '***' 
   volumes:
-    - /mnt/storage/wordpress:/var/www
-    - /mnt/storage/wordpress/html:/var/www/html
+    - /mnt/storage/wordpress:/var/www/html

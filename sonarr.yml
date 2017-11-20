@@ -9,5 +9,5 @@ sonarr:
     TZ: EUROPE/BERLIN
   volumes:
     - /mnt/storage/sonarr:/config
-    - /mnt/storage/series:/series
+    - /mnt/storage/series:/tv
     - /mnt/storage/downloads:/downloads
