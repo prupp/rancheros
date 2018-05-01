@@ -1,9 +1,22 @@
 hostname: rancher
+write_files:
+  - path: /var/spool/cron/crontabs/rancher
+    permissions: "0600"
+    owner: root
+    group: rancher
+    content: |
+      * * * * * /home/rancher/backup_to_synology.sh >> /var/log/backup.log 2>&1
+  - path: /etc/rc.local
+    permissions: "0755"
+    owner: root
+    content: |
+      #!/bin/bash
+      crond
 rancher:
   console: default
   docker:
     data-root: /mnt/storage/docker
-    engine: docker-17.06.1-ce
+    engine: docker-17.12.1-ce
     graph: /mnt/storage/docker
     storage_driver: zfs
   environment:
@@ -30,5 +43,6 @@ rancher:
     dev: LABEL=RANCHER_STATE
     wait: true
 ssh_authorized_keys:
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQColbmmP7Y5KHVAiaR+mI/4VkqjDxv0uCDUYJwVYoZGR19BSwEMarMlaZNyw+vPrhWvB1Rn2aCBDO4nI1ElnUcQbxBD1X4nFze7pzNnloPvlYnodNLJz82fkXA7wcb3PRD7eYLp0NBUHVVM6Dt0bIWXEyE2M/pPn/14ujliKFRFiNk32vSmvPBRLeA7Yf7rUrI09KHORpYCO72iH08A7IF+jl8Mdr6/iNsv2/6oF5mQkSrOrpeqkPO2AJy3ikGGKf61Brx4YJIqnGAmfHQQCCAOXSCs6iPthgQMP+zvLUlARBdAoRNkK8NSdmFf+3U3H43RNFol0VIXoQpxwwVwksJR JuiceSSH
 - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIdYANNaPgNhyxqUoXpl6xJ23i0j8cg0MTEdJpALAE2Pthr1D2XH4CryXJPp1rLoP2E67ZenjiYtWs96/RYVn03wxOQD4cn7N4fWpvKrxZFWm6YkZnfTQ3ISErtTNzwUULHckMcfwMSW9/5tGOLkQiNCpD0ENqrPUsjDazUyDe6lyfWWcyD576V6hfiAvD6xHRBiOfsrhK/iX3AVHknLvrSnnyQoAyscU7JsPH3bfBWftlsAK/BBJxSN6FaoTn2+XeGXtu8jRCA31E29OX8k1xG5QZof2yFfViv0xUPc3iTMB/8/19k4Sxu0LgR3YqOdZrEbgRSnpLg1b/dYCmKfwd
   philipprupp@Philipps-MBP.fritz.box

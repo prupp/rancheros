@@ -9,5 +9,5 @@ couchpotato:
     TZ: EUROPE/BERLIN
   volumes:
     - /mnt/storage/couchpotato:/config
-	  - /mnt/storage/downloads:/downloads
-	  - /mnt/storage/movies:/movies
+    - /mnt/storage/downloads:/downloads
+    - /mnt/storage/movies:/movies

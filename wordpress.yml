@@ -11,6 +11,7 @@ https-portal:
   environment:
     - "DOMAINS=goodmorningasia.duckdns.org -> http://wordpress"
     - "PRODUCTION=true"
+    - "CLIENT_MAX_BODY_SIZE=50M"
 
 db:
   image: mariadb
