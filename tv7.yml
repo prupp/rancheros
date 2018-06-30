@@ -1,0 +1,20 @@
+telly:
+  image: tombowditch/telly
+  restart: always
+  ports:
+    - "6077:6077"
+  environment:
+    PGID: 0
+    PUID: 0
+    TZ: EUROPE/BERLIN
+    PLAYLIST: /config/tv7udpxy.m3u
+    STREAMS: 5
+    FRIENDLYNAME: TV7Tuner
+  command: -base=telly:6077
+  volumes:
+    - /mnt/storage/telly:/config
+
+udpxy:
+  image: dorftv/udpxy
+  ports:
+    - "4022:4022"

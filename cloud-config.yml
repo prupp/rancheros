@@ -36,6 +36,7 @@ rancher:
     /var/lib/rancher/conf/samba.yml: true
     /var/lib/rancher/conf/sonarr.yml: true
     /var/lib/rancher/conf/timemachine.yml: true
+    /var/lib/rancher/conf/tv7.yml: true
     /var/lib/rancher/conf/wordpress.yml: true
     kernel-headers-system-docker: true
     zfs: true
