@@ -8,5 +8,7 @@ timemachine:
     AFP_LOGIN: timemachine
     AFP_PASSWORD: '***'
     AFP_NAME: rancher-machine
+    PUID: 1100
+    PGID: 1100
   volumes:
     - /mnt/storage/timemachine:/timemachine
