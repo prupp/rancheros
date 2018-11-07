@@ -16,7 +16,7 @@ rancher:
   console: default
   docker:
     data-root: /mnt/storage/docker
-    engine: docker-17.12.1-ce
+    engine: docker-18.06.1-ce
     graph: /mnt/storage/docker
     storage_driver: zfs
   environment:
