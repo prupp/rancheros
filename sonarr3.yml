@@ -1,0 +1,13 @@
+sonarr3:
+  image: linuxserver/sonarr:preview
+  restart: always
+  ports:
+    - 8990:8989
+  environment:
+    PGID: 0
+    PUID: 0
+    TZ: EUROPE/BERLIN
+  volumes:
+    - /mnt/storage/sonarr3:/config
+    - /mnt/storage/series:/tv
+    - /mnt/storage/downloads:/downloads

@@ -1,6 +1,6 @@
 samba:
   image: dperson/samba
-  restart: always
+  restart: unless-stopped
   net: host
   ports:
     - 139:139
@@ -15,4 +15,4 @@ samba:
   volumes:
     - /mnt/storage:/mount
     - /mnt/storage/samba:/etc/samba
-  command: -s "rancher;/mount"
+  command: -s "storage;/mount"
