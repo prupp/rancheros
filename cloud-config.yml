@@ -13,7 +13,7 @@ rancher:
         gateway: 192.168.178.1
         mtu: 1500
   services_include:
-    /var/lib/rancher/conf/couchpotato.yml: true
+    /var/lib/rancher/conf/couchpotato.yml: false
     /var/lib/rancher/conf/plex.yml: true
     /var/lib/rancher/conf/portainer.yml: true
     /var/lib/rancher/conf/sabnzbd.yml: true
@@ -23,6 +23,7 @@ rancher:
     /var/lib/rancher/conf/unifi.yml: true
     /var/lib/rancher/conf/wordpress.yml: false
     /var/lib/rancher/conf/sonarr3.yml: true
+    /var/lib/rancher/conf/radarr.yml: true
     crontab: true
     kernel-headers-system-docker: true
     zfs: true

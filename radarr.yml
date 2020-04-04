@@ -1,0 +1,13 @@
+radarr:
+  image: linuxserver/radarr
+  restart: always
+  ports:
+    - 7878:7878
+  environment:
+    PGID: 0
+    PUID: 0
+    TZ: EUROPE/BERLIN
+  volumes:
+    - /mnt/storage/radarr:/config
+    - /mnt/storage/movies:/movies
+    - /mnt/storage/downloads:/downloads
