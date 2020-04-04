@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./update_couchpotato.sh
+./update_radarr.sh
 ./update_plex.sh
 ./update_portainer.sh
 ./update_sabnzbd.sh
