@@ -1,9 +1,9 @@
 #!/bin/bash
 
-./update_radarr.sh
-./update_plex.sh
-./update_portainer.sh
-./update_sabnzbd.sh
-./update_sonarr.sh
-./update_timemachine.sh
-./update_unifi.sh
+/home/rancher/updates/update_radarr.sh
+/home/rancher/updates/update_plex.sh
+/home/rancher/updates/update_portainer.sh
+/home/rancher/updates/update_sabnzbd.sh
+/home/rancher/updates/update_sonarr.sh
+/home/rancher/updates/update_timemachine.sh
+/home/rancher/updates/update_unifi.sh
