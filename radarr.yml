@@ -13,3 +13,6 @@ radarr:
     - /mnt/storage/downloads:/downloads
   networks:
     - ranchernet
+
+networks:
+    ranchernet:
