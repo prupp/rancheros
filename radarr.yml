@@ -11,3 +11,5 @@ radarr:
     - /mnt/storage/radarr:/config
     - /mnt/storage/movies:/movies
     - /mnt/storage/downloads:/downloads
+  networks:
+    - ranchernet
