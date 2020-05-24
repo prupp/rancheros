@@ -15,6 +15,6 @@ radarr:
     - ranchernet
 
 networks:
-    ranchernet:
+  default:
+    external:
       name: ranchernet
-      driver: bridge
