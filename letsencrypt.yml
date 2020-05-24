@@ -1,0 +1,17 @@
+letsencrypt:
+  image: linuxserver/letsencrypt
+  restart: unless-stopped
+  ports:
+    - 443:443
+  cap_add:
+    - NET_ADMIN
+  environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=EUROPE/BERLIN
+    - URL=prupp.duckdns.org
+    - SUBDOMAINS=wildcard
+    - VALIDATION=duckdns
+    - DUCKDNSTOKEN=***
+  volumes:
+    - /mnt/storage/letsencrypt:/config
