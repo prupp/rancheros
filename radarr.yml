@@ -17,3 +17,4 @@ radarr:
 networks:
     ranchernet:
       name: ranchernet
+      driver: bridge
