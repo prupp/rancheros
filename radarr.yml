@@ -16,3 +16,4 @@ radarr:
 
 networks:
     ranchernet:
+      name: ranchernet
