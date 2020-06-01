@@ -1,0 +1,14 @@
+oauth:
+  image: voucher/vouch-proxy
+  restart: unless-stopped
+  ports:
+    - 9091:9090
+  environment:
+    - TZ=EUROPE/BERLIN
+    - VOUCH_DOMAINS=prupp.duckdns.org
+    - VOUCH_COOKIE_DOMAINS=prupp.duckdns.org
+    - VOUCH_WHITELIST=***
+    - OAUTH_PROVIDER=google
+    - OAUTH_CLIENT_ID=***
+    - OAUTH_CLIENT_SECRET=***
+    - OAUTH_CALLBACK_URLS=https://vouch.prupp.duckdns.org/auth
