@@ -1,41 +1,28 @@
-https-portal:
-  image: steveltn/https-portal
-  restart: always
-  ports:
-    - 80:80
-    - 443:443
-  depends_on:
-    - wordpress
-  links:
-    - wordpress
-  environment:
-    - "DOMAINS=goodmorningasia.duckdns.org -> http://wordpress"
-    - "PRODUCTION=true"
-    - "CLIENT_MAX_BODY_SIZE=50M"
-
-db:
+wordpressdb:
   image: mariadb
   volumes:
-    - /mnt/storage/mysql:/var/lib/mysql
+    - /mnt/storage/wordpressdb:/var/lib/mysql
   restart: always
   ports:
     - 3306:3306
   environment:
-    MYSQL_ROOT_PASSWORD: '***'
-    MYSQL_DATABASE: wordpress
-    MYSQL_USER: prupp
-    MYSQL_PASSWORD: '***'
+    MYSQL_ROOT_PASSWORD: ***
+    MYSQL_DATABASE: ***
+    MYSQL_USER: ***
+    MYSQL_PASSWORD: ***
 
 wordpress:
   depends_on:
-    - db
+    - wordpressdb
   links:
-    - "db:db"
-  restart: always        
-  image: wordpress:latest         
-  environment:                
-    WORDPRESS_DB_HOST: db:3306             
-    WORDPRESS_DB_USER: prupp               
-    WORDPRESS_DB_PASSWORD: '***' 
+    - "wordpressdb:wordpressdb"
+  restart: always
+  ports:
+    - 8000:80
+  image: wordpress:latest
+  environment:
+    WORDPRESS_DB_HOST: wordpressdb:3306
+    WORDPRESS_DB_USER: ***
+    WORDPRESS_DB_PASSWORD: ***
   volumes:
     - /mnt/storage/wordpress:/var/www/html
