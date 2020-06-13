@@ -5,5 +5,4 @@
 /home/rancher/updates/update_portainer.sh
 /home/rancher/updates/update_sabnzbd.sh
 /home/rancher/updates/update_sonarr.sh
-/home/rancher/updates/update_timemachine.sh
 /home/rancher/updates/update_unifi.sh
