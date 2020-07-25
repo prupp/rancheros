@@ -1,0 +1,13 @@
+lidarr:
+  image: linuxserver/lidarr
+  restart: always
+  ports:
+    - 8686:8686
+  environment:
+    PGID: 0
+    PUID: 0
+    TZ: EUROPE/BERLIN
+  volumes:
+    - /mnt/storage/lidarr:/config
+    - /mnt/storage/music:/music
+    - /mnt/storage/downloads:/downloads
