@@ -12,3 +12,4 @@ plex:
     - /mnt/storage/plex:/config
     - /mnt/storage/movies:/movies
     - /mnt/storage/series:/series
+    - /mnt/storage/music:/music
