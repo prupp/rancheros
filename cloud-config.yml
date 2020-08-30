@@ -1,8 +1,9 @@
+hostname: rancher
 rancher:
   console: default
   docker:
     data-root: /mnt/storage/docker
-    engine: docker-19.03.4
+    engine: docker-19.03.11
     graph: /mnt/storage/docker
     storage_driver: zfs
   network:
@@ -14,25 +15,25 @@ rancher:
         mtu: 1500
   services_include:
     /var/lib/rancher/conf/couchpotato.yml: false
+    /var/lib/rancher/conf/letsencrypt.yml: true
+    /var/lib/rancher/conf/lidarr.yml: true
+    /var/lib/rancher/conf/oauth.yml: true
     /var/lib/rancher/conf/plex.yml: true
     /var/lib/rancher/conf/portainer.yml: true
     /var/lib/rancher/conf/sabnzbd.yml: true
-    /var/lib/rancher/conf/samba.yml: false
     /var/lib/rancher/conf/sonarr.yml: false
-    /var/lib/rancher/conf/timemachine.yml: true
-    /var/lib/rancher/conf/unifi.yml: true
-    /var/lib/rancher/conf/wordpress.yml: false
     /var/lib/rancher/conf/sonarr3.yml: true
+    /var/lib/rancher/conf/unifi.yml: false
+    /var/lib/rancher/conf/wordpress.yml: false
     /var/lib/rancher/conf/radarr.yml: true
     crontab: true
+    https://raw.githubusercontent.com/prupp/rancheros/master/radarr.yml: true
     kernel-headers-system-docker: true
     zfs: true
-  ssh:
-    keys:
-      ...
 write_files:
 - content: |+
     30 05 * * * /home/rancher/backup_to_synology.sh
+    00 04 * * 1 /home/rancher/updates/update_all_container.sh
   group: root
   owner: root
   path: /var/spool/cron/crontabs/root
