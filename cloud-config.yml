@@ -16,6 +16,7 @@ rancher:
   services_include:
     /var/lib/rancher/conf/couchpotato.yml: false
     /var/lib/rancher/conf/letsencrypt.yml: true
+    /var/lib/rancher/conf/duckdns.yml: true
     /var/lib/rancher/conf/lidarr.yml: true
     /var/lib/rancher/conf/oauth.yml: true
     /var/lib/rancher/conf/plex.yml: true
